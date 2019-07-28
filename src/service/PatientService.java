@@ -1,9 +1,10 @@
 package service;
 
 import domain.Patient;
+import java.util.Optional;
 
-public interface PatientService extends GenericService {
+public interface PatientService extends GenericService<Patient> {
 
-    Patient getByDisease(String disease);
+    Optional<Patient> getByDisease(String disease);
 
 }

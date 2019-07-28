@@ -2,9 +2,11 @@ package service.impl;
 
 import dao.AidmanDao;
 import dao.impl.AidmanDaoImpl;
-import domain.Personnel;
 import domain.Aidman;
 import service.AidmanService;
+
+import java.util.Optional;
+import java.util.Set;
 
 
 public class AidmanServiceImpl implements AidmanService {
@@ -25,47 +27,53 @@ public class AidmanServiceImpl implements AidmanService {
     }
 
     @Override
-    public Aidman getByIncrease(Integer increase) {
-        return null;
+    public Optional<Aidman> getByIncrease(Integer increase) {
+        return aidmanDao.getByIncrease(increase);
     }
 
     @Override
-    public boolean fire(Personnel personnel) {
-        return false;
+    public boolean fire(Aidman personnel) {
+        //add some logic
+        aidmanDao.delete(personnel);
+        return true;
     }
 
     @Override
-    public boolean hire(Personnel personnel) {
-        return false;
+    public boolean hire(Aidman personnel) {
+        //add some logic
+        aidmanDao.save(personnel);
+        return true;
     }
 
     @Override
-    public boolean promote(Personnel personnel) {
-        return false;
+    public boolean promote(Aidman personnel) {
+        //add some logic
+        aidmanDao.update(personnel);
+        return true;
     }
 
     @Override
-    public Object save(Object object) {
-        return null;
+    public Optional<Aidman> save(Aidman object) {
+        return aidmanDao.save(object);
     }
 
     @Override
-    public Object update(Object object) {
-        return null;
+    public Optional<Aidman> update(Aidman object) {
+        return aidmanDao.update(object);
     }
 
     @Override
-    public Object[] getAll() {
-        return new Object[0];
+    public Set<Aidman> getAll() {
+        return aidmanDao.getAll();
     }
 
     @Override
-    public Object getByName(String Name) {
-        return null;
+    public Optional<Aidman> getByName(String name) {
+        return aidmanDao.getByName(name);
     }
 
     @Override
-    public void delete(Object object) {
+    public void delete(Aidman object) {
 
     }
 

@@ -1,9 +1,10 @@
 package service;
 
 import domain.Medicament;
+import java.util.List;
 
-public interface MedicamentService extends GenericService {
+public interface MedicamentService extends GenericService<Medicament> {
 
-    Medicament[] getByPrice(Double price);
+    List<Medicament> getByPrice(Double price);
 
 }

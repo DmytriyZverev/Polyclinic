@@ -1,9 +1,10 @@
 package dao;
 
 import domain.Assistant;
+import java.util.Optional;
 
-public interface AssistantDao extends GenericDao {
+public interface AssistantDao extends PersonnelDao<Assistant> {
 
-    Assistant getByCategory(Integer category);
+    Optional<Assistant> getByCategory(Integer category);
 
 }

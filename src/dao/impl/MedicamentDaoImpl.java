@@ -3,6 +3,11 @@ package dao.impl;
 import dao.MedicamentDao;
 import domain.Medicament;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import static java.util.Optional.empty;
+
 public class MedicamentDaoImpl implements MedicamentDao {
 
     private static MedicamentDao instance;
@@ -19,32 +24,32 @@ public class MedicamentDaoImpl implements MedicamentDao {
     }
 
     @Override
-    public Medicament[] getByPrice(Double price) {
-        return null;
+    public List<Medicament> getByPrice(Double price) {
+        return new ArrayList<>();
     }
 
     @Override
-    public Medicament save(Object object) {
-        return null;
+    public Optional<Medicament> save(Medicament object) {
+        return empty();
     }
 
     @Override
-    public Medicament update(Object object) {
-        return null;
+    public Optional<Medicament> update(Medicament object) {
+        return empty();
     }
 
     @Override
-    public Medicament[] getAll() {
-        return new Medicament[0];
+    public List<Medicament> getAll() {
+        return new ArrayList<>();
     }
 
     @Override
-    public Medicament getByName(String name) {
-        return null;
+    public Optional<Medicament> getByName(String name) {
+        return empty();
     }
 
     @Override
-    public void delete(Object object) {
+    public void delete(Medicament object) {
 
     }
 

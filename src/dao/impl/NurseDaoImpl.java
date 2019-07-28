@@ -3,6 +3,12 @@ package dao.impl;
 import dao.NurseDao;
 import domain.Nurse;
 
+import java.util.HashSet;
+import java.util.Optional;
+import java.util.Set;
+
+import static java.util.Optional.empty;
+
 public class NurseDaoImpl implements NurseDao {
 
     private static NurseDao instance;
@@ -19,32 +25,32 @@ public class NurseDaoImpl implements NurseDao {
     }
 
     @Override
-    public Nurse getByProfile(String profile) {
-        return null;
+    public Optional<Nurse> getByProfile(String profile) {
+        return empty();
     }
 
     @Override
-    public Nurse save(Object object) {
-        return null;
+    public Optional<Nurse> save(Nurse object) {
+        return empty();
     }
 
     @Override
-    public Nurse update(Object object) {
-        return null;
+    public Optional<Nurse> update(Nurse object) {
+        return empty();
     }
 
     @Override
-    public Nurse[] getAll() {
-        return new Nurse[0];
+    public Set<Nurse> getAll() {
+        return new HashSet<>();
     }
 
     @Override
-    public Nurse getByName(String name) {
-        return null;
+    public Optional<Nurse> getByName(String name) {
+        return empty();
     }
 
     @Override
-    public void delete(Object object) {
+    public void delete(Nurse object) {
 
     }
 

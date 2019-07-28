@@ -2,12 +2,16 @@ package service;
 
 import domain.Personnel;
 
-public interface PersonnelService extends GenericService {
+import java.util.Set;
 
-    boolean fire(Personnel personnel);
+public interface PersonnelService<T extends Personnel> extends GenericService<T> {
 
-    boolean hire(Personnel personnel);
+    boolean fire(T personnel);
 
-    boolean promote(Personnel personnel);
+    boolean hire(T personnel);
 
+    boolean promote(T personnel);
+
+    @Override
+    Set<T> getAll();
 }

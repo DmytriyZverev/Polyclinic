@@ -3,6 +3,12 @@ package dao.impl;
 import dao.PatientDao;
 import domain.Patient;
 
+import java.util.HashSet;
+import java.util.Optional;
+import java.util.Set;
+
+import static java.util.Optional.empty;
+
 public class PatientDaoImpl implements PatientDao {
 
     private static PatientDao instance;
@@ -19,32 +25,32 @@ public class PatientDaoImpl implements PatientDao {
     }
 
     @Override
-    public Patient getByDisease(String disease) {
-        return null;
+    public Optional<Patient> getByDisease(String disease) {
+        return empty();
     }
 
     @Override
-    public Patient save(Object object) {
-        return null;
+    public Optional<Patient> save(Patient object) {
+        return empty();
     }
 
     @Override
-    public Patient update(Object object) {
-        return null;
+    public Optional<Patient> update(Patient object) {
+        return empty();
     }
 
     @Override
-    public Patient[] getAll() {
-        return new Patient[0];
+    public Set<Patient> getAll() {
+        return new HashSet<>();
     }
 
     @Override
-    public Patient getByName(String name) {
-        return null;
+    public Optional<Patient> getByName(String name) {
+        return empty();
     }
 
     @Override
-    public void delete(Object object) {
+    public void delete(Patient object) {
 
     }
 

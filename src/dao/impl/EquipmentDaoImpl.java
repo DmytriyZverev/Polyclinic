@@ -3,6 +3,11 @@ package dao.impl;
 import dao.EquipmentDao;
 import domain.Equipment;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import static java.util.Optional.empty;
+
 public class EquipmentDaoImpl implements EquipmentDao {
 
     private static EquipmentDao instance;
@@ -19,32 +24,32 @@ public class EquipmentDaoImpl implements EquipmentDao {
     }
 
     @Override
-    public Equipment getById(Integer id) {
-        return null;
+    public List<Equipment> getById(Integer id) {
+        return new ArrayList<>();
     }
 
     @Override
-    public Equipment save(Object object) {
-        return null;
+    public Optional<Equipment> save(Equipment object) {
+        return empty();
     }
 
     @Override
-    public Equipment update(Object object) {
-        return null;
+    public Optional<Equipment> update(Equipment object) {
+        return empty();
     }
 
     @Override
-    public Equipment[] getAll() {
-        return new Equipment[0];
+    public List<Equipment> getAll() {
+        return new ArrayList<>();
     }
 
     @Override
-    public Equipment getByName(String name) {
-        return null;
+    public Optional<Equipment> getByName(String name) {
+        return empty();
     }
 
     @Override
-    public void delete(Object object) {
+    public void delete(Equipment object) {
 
     }
 

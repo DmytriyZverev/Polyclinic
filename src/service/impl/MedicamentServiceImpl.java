@@ -5,6 +5,10 @@ import dao.impl.MedicamentDaoImpl;
 import domain.Medicament;
 import service.MedicamentService;
 
+import java.util.Collection;
+import java.util.List;
+import java.util.Optional;
+
 public class MedicamentServiceImpl implements MedicamentService {
 
     private static MedicamentService instance;
@@ -23,32 +27,32 @@ public class MedicamentServiceImpl implements MedicamentService {
     }
 
     @Override
-    public Medicament[] getByPrice(Double price) {
-        return new Medicament[0];
+    public List<Medicament> getByPrice(Double price) {
+        return medicamentDao.getByPrice(price);
     }
 
     @Override
-    public Object save(Object object) {
-        return null;
+    public Optional<Medicament> save(Medicament object) {
+        return medicamentDao.save(object);
     }
 
     @Override
-    public Object update(Object object) {
-        return null;
+    public Optional<Medicament> update(Medicament object) {
+        return medicamentDao.update(object);
     }
 
     @Override
-    public Object[] getAll() {
-        return new Object[0];
+    public Collection<Medicament> getAll() {
+        return medicamentDao.getAll();
     }
 
     @Override
-    public Object getByName(String Name) {
-        return null;
+    public Optional<Medicament> getByName(String name) {
+        return medicamentDao.getByName(name);
     }
 
     @Override
-    public void delete(Object object) {
+    public void delete(Medicament object) {
 
     }
 

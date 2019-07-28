@@ -6,6 +6,9 @@ import domain.Personnel;
 import domain.Nurse;
 import service.NurseService;
 
+import java.util.Optional;
+import java.util.Set;
+
 
 public class NurseServiceImpl implements NurseService {
 
@@ -25,47 +28,53 @@ public class NurseServiceImpl implements NurseService {
     }
 
     @Override
-    public Nurse getByProfile(String profile) {
-        return null;
+    public Optional<Nurse> getByProfile(String profile) {
+        return nurseDao.getByProfile(profile);
     }
 
     @Override
-    public boolean fire(Personnel personnel) {
-        return false;
+    public boolean fire(Nurse personnel) {
+        //add some logic
+        nurseDao.delete(personnel);
+        return true;
     }
 
     @Override
-    public boolean hire(Personnel personnel) {
-        return false;
+    public boolean hire(Nurse personnel) {
+        //add some logic
+        nurseDao.save(personnel);
+        return true;
     }
 
     @Override
-    public boolean promote(Personnel personnel) {
-        return false;
+    public boolean promote(Nurse personnel) {
+        //add some logic
+        nurseDao.update(personnel);
+        return true;
     }
 
     @Override
-    public Object save(Object object) {
-        return null;
+    public Optional<Nurse> save(Nurse object) {
+        return nurseDao.save(object);
     }
 
     @Override
-    public Object update(Object object) {
-        return null;
+    public Optional<Nurse> update(Nurse object) {
+        return nurseDao.update(object);
     }
 
     @Override
-    public Object[] getAll() {
-        return new Object[0];
+    public Set<Nurse> getAll() {
+        return nurseDao.getAll();
     }
 
     @Override
-    public Object getByName(String Name) {
-        return null;
+    public Optional<Nurse> getByName(String name) {
+        return nurseDao.getByName(name);
     }
 
     @Override
-    public void delete(Object object) {
+    public void delete(Nurse object) {
 
     }
 

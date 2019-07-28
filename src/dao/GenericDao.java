@@ -1,16 +1,19 @@
 package dao;
 
-public interface GenericDao {
+import java.util.Collection;
+import java.util.Optional;
 
-    Object save(Object object);
+public interface GenericDao<T> {
 
-    Object update(Object object);
+    Optional<T> save(T object);
 
-    Object[] getAll();
+    Optional<T> update(T object);
 
-    Object getByName(String Name);
+    Collection<T> getAll();
 
-    void delete(Object object);
+    Optional<T> getByName(String Name);
+
+    void delete(T object);
 
     void deleteAll();
 

@@ -3,6 +3,12 @@ package dao.impl;
 import dao.DoctorDao;
 import domain.Doctor;
 
+import java.util.HashSet;
+import java.util.Optional;
+import java.util.Set;
+
+import static java.util.Optional.empty;
+
 public class DoctorDaoImpl implements DoctorDao {
 
     private static DoctorDao instance;
@@ -19,32 +25,32 @@ public class DoctorDaoImpl implements DoctorDao {
     }
 
     @Override
-    public Doctor getBySpecialty(String specialty) {
-        return null;
+    public Optional<Doctor> getBySpecialty(String specialty) {
+        return empty();
     }
 
     @Override
-    public Doctor save(Object object) {
-        return null;
+    public Optional<Doctor> save(Doctor object) {
+        return empty();
     }
 
     @Override
-    public Doctor update(Object object) {
-        return null;
+    public Optional<Doctor> update(Doctor object) {
+        return empty();
     }
 
     @Override
-    public Doctor[] getAll() {
-        return new Doctor[0];
+    public Set<Doctor> getAll() {
+        return new HashSet<>();
     }
 
     @Override
-    public Doctor getByName(String name) {
-        return null;
+    public Optional<Doctor> getByName(String name) {
+        return empty();
     }
 
     @Override
-    public void delete(Object object) {
+    public void delete(Doctor object) {
 
     }
 

@@ -2,9 +2,11 @@ package service.impl;
 
 import dao.AssistantDao;
 import dao.impl.AssistantDaoImpl;
-import domain.Personnel;
 import domain.Assistant;
 import service.AssistantService;
+
+import java.util.Optional;
+import java.util.Set;
 
 
 public class AssistantServiceImpl implements AssistantService {
@@ -25,47 +27,53 @@ public class AssistantServiceImpl implements AssistantService {
     }
 
     @Override
-    public Assistant getByCategory(Integer category) {
-        return null;
+    public Optional<Assistant> getByCategory(Integer category) {
+        return assistantDao.getByCategory(category);
     }
 
     @Override
-    public boolean fire(Personnel personnel) {
-        return false;
+    public boolean fire(Assistant personnel) {
+        //add some logic
+        assistantDao.delete(personnel);
+        return true;
     }
 
     @Override
-    public boolean hire(Personnel personnel) {
-        return false;
+    public boolean hire(Assistant personnel) {
+        //add some logic
+        assistantDao.save(personnel);
+        return true;
     }
 
     @Override
-    public boolean promote(Personnel personnel) {
-        return false;
+    public boolean promote(Assistant personnel) {
+        //add some logic
+        assistantDao.update(personnel);
+        return true;
     }
 
     @Override
-    public Object save(Object object) {
-        return null;
+    public Optional<Assistant> save(Assistant object) {
+        return assistantDao.save(object);
     }
 
     @Override
-    public Object update(Object object) {
-        return null;
+    public Optional<Assistant> update(Assistant object) {
+        return assistantDao.update(object);
     }
 
     @Override
-    public Object[] getAll() {
-        return new Object[0];
+    public Set<Assistant> getAll() {
+        return assistantDao.getAll();
     }
 
     @Override
-    public Object getByName(String Name) {
-        return null;
+    public Optional<Assistant> getByName(String name) {
+        return assistantDao.getByName(name);
     }
 
     @Override
-    public void delete(Object object) {
+    public void delete(Assistant object) {
 
     }
 

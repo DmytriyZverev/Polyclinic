@@ -1,9 +1,10 @@
 package dao;
 
 import domain.Nurse;
+import java.util.Optional;
 
-public interface NurseDao extends GenericDao {
+public interface NurseDao extends PersonnelDao<Nurse> {
 
-    Nurse getByProfile(String profile);
+    Optional<Nurse> getByProfile(String profile);
 
 }

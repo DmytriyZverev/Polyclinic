@@ -1,9 +1,9 @@
 package dao;
 
 import domain.Aidman;
+import java.util.Optional;
 
-public interface AidmanDao extends GenericDao {
-
-    Aidman getByIncrease(Integer increase);
+public interface AidmanDao extends PersonnelDao<Aidman> {
+    Optional<Aidman> getByIncrease(Integer increase);
 
 }

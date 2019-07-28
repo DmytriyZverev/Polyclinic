@@ -1,9 +1,10 @@
 package service;
 
 import domain.Doctor;
+import java.util.Optional;
 
-public interface DoctorService extends PersonnelService {
+public interface DoctorService extends PersonnelService<Doctor> {
 
-    Doctor getBySpecialty(String specialty);
+    Optional<Doctor> getBySpecialty(String specialty);
 
 }

@@ -3,6 +3,12 @@ package dao.impl;
 import dao.AssistantDao;
 import domain.Assistant;
 
+import java.util.HashSet;
+import java.util.Optional;
+import java.util.Set;
+
+import static java.util.Optional.empty;
+
 public class AssistantDaoImpl implements AssistantDao {
 
     private static AssistantDao instance;
@@ -19,32 +25,32 @@ public class AssistantDaoImpl implements AssistantDao {
     }
 
     @Override
-    public Assistant getByCategory(Integer category) {
-        return null;
+    public Optional<Assistant> getByCategory(Integer category) {
+        return empty();
     }
 
     @Override
-    public Assistant save(Object object) {
-        return null;
+    public Optional<Assistant> save(Assistant object) {
+        return empty();
     }
 
     @Override
-    public Assistant update(Object object) {
-        return null;
+    public Optional<Assistant> update(Assistant object) {
+        return empty();
     }
 
     @Override
-    public Assistant[] getAll() {
-        return new Assistant[0];
+    public Set<Assistant> getAll() {
+        return new HashSet<>();
     }
 
     @Override
-    public Assistant getByName(String name) {
-        return null;
+    public Optional<Assistant> getByName(String name) {
+        return empty();
     }
 
     @Override
-    public void delete(Object object) {
+    public void delete(Assistant object) {
 
     }
 

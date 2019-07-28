@@ -5,6 +5,9 @@ import dao.impl.PatientDaoImpl;
 import domain.Patient;
 import service.PatientService;
 
+import java.util.Collection;
+import java.util.Optional;
+
 
 public class PatientServiceImpl implements PatientService {
 
@@ -24,32 +27,32 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    public Patient getByDisease(String disease) {
-        return null;
+    public Optional<Patient> getByDisease(String disease) {
+        return patientDao.getByDisease(disease);
     }
 
     @Override
-    public Object save(Object object) {
-        return null;
+    public Optional<Patient> save(Patient object) {
+        return patientDao.save(object);
     }
 
     @Override
-    public Object update(Object object) {
-        return null;
+    public Optional<Patient> update(Patient object) {
+        return patientDao.update(object);
     }
 
     @Override
-    public Object[] getAll() {
-        return new Object[0];
+    public Collection<Patient> getAll() {
+        return patientDao.getAll();
     }
 
     @Override
-    public Object getByName(String Name) {
-        return null;
+    public Optional<Patient> getByName(String name) {
+        return patientDao.getByName(name);
     }
 
     @Override
-    public void delete(Object object) {
+    public void delete(Patient object) {
 
     }
 

@@ -1,9 +1,10 @@
 package service;
 
 import domain.Aidman;
+import java.util.Optional;
 
-public interface AidmanService extends PersonnelService {
+public interface AidmanService extends PersonnelService<Aidman> {
 
-    Aidman getByIncrease(Integer increase);
+    Optional<Aidman> getByIncrease(Integer increase);
 
 }

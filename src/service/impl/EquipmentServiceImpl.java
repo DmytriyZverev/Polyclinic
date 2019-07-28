@@ -5,6 +5,10 @@ import dao.impl.EquipmentDaoImpl;
 import domain.Equipment;
 import service.EquipmentService;
 
+import java.util.Collection;
+import java.util.List;
+import java.util.Optional;
+
 
 public class EquipmentServiceImpl implements EquipmentService {
 
@@ -24,32 +28,32 @@ public class EquipmentServiceImpl implements EquipmentService {
     }
 
     @Override
-    public Equipment getById(Integer id) {
-        return null;
+    public List<Equipment> getById(Integer id) {
+        return equipmentDao.getById(id);
     }
 
     @Override
-    public Object save(Object object) {
-        return null;
+    public Optional<Equipment> save(Equipment object) {
+        return equipmentDao.save(object);
     }
 
     @Override
-    public Object update(Object object) {
-        return null;
+    public Optional<Equipment> update(Equipment object) {
+        return equipmentDao.update(object);
     }
 
     @Override
-    public Object[] getAll() {
-        return new Object[0];
+    public Collection<Equipment> getAll() {
+        return equipmentDao.getAll();
     }
 
     @Override
-    public Object getByName(String Name) {
-        return null;
+    public Optional<Equipment> getByName(String name) {
+        return equipmentDao.getByName(name);
     }
 
     @Override
-    public void delete(Object object) {
+    public void delete(Equipment object) {
 
     }
 

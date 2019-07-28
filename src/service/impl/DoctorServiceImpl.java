@@ -2,9 +2,11 @@ package service.impl;
 
 import dao.DoctorDao;
 import dao.impl.DoctorDaoImpl;
-import domain.Personnel;
 import domain.Doctor;
 import service.DoctorService;
+
+import java.util.Optional;
+import java.util.Set;
 
 
 public class DoctorServiceImpl implements DoctorService {
@@ -25,47 +27,53 @@ public class DoctorServiceImpl implements DoctorService {
     }
 
     @Override
-    public Doctor getBySpecialty(String specialty) {
-        return null;
+    public Optional<Doctor> getBySpecialty(String specialty) {
+        return doctorDao.getBySpecialty(specialty);
     }
 
     @Override
-    public boolean fire(Personnel personnel) {
-        return false;
+    public boolean fire(Doctor personnel) {
+        //add some logic
+        doctorDao.delete(personnel);
+        return true;
     }
 
     @Override
-    public boolean hire(Personnel personnel) {
-        return false;
+    public boolean hire(Doctor personnel) {
+        //add some logic
+        doctorDao.save(personnel);
+        return true;
     }
 
     @Override
-    public boolean promote(Personnel personnel) {
-        return false;
+    public boolean promote(Doctor personnel) {
+        //add some logic
+        doctorDao.update(personnel);
+        return true;
     }
 
     @Override
-    public Object save(Object object) {
-        return null;
+    public Optional<Doctor> save(Doctor object) {
+        return doctorDao.save(object);
     }
 
     @Override
-    public Object update(Object object) {
-        return null;
+    public Optional<Doctor> update(Doctor object) {
+        return doctorDao.update(object);
     }
 
     @Override
-    public Object[] getAll() {
-        return new Object[0];
+    public Set<Doctor> getAll() {
+        return doctorDao.getAll();
     }
 
     @Override
-    public Object getByName(String Name) {
-        return null;
+    public Optional<Doctor> getByName(String name) {
+        return doctorDao.getByName(name);
     }
 
     @Override
-    public void delete(Object object) {
+    public void delete(Doctor object) {
 
     }
 

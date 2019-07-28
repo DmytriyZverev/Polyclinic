@@ -1,9 +1,10 @@
 package service;
 
 import domain.Equipment;
+import java.util.List;
 
-public interface EquipmentService extends GenericService {
+public interface EquipmentService extends GenericService<Equipment> {
 
-    Equipment getById(Integer id);
+    List<Equipment> getById(Integer id);
 
 }

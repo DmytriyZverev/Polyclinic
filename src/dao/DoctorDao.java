@@ -1,9 +1,10 @@
 package dao;
 
 import domain.Doctor;
+import java.util.Optional;
 
-public interface DoctorDao extends GenericDao {
+public interface DoctorDao extends PersonnelDao<Doctor> {
 
-    Doctor getBySpecialty(String specialty);
+    Optional<Doctor> getBySpecialty(String specialty);
 
 }

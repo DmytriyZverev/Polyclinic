@@ -1,9 +1,10 @@
 package service;
 
 import domain.Assistant;
+import java.util.Optional;
 
-public interface AssistantService extends PersonnelService {
+public interface AssistantService extends PersonnelService<Assistant> {
 
-    Assistant getByCategory(Integer category);
+    Optional<Assistant> getByCategory(Integer category);
 
 }

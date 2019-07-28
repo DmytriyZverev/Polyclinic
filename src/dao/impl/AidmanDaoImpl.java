@@ -3,6 +3,12 @@ package dao.impl;
 import dao.AidmanDao;
 import domain.Aidman;
 
+import java.util.HashSet;
+import java.util.Optional;
+import java.util.Set;
+
+import static java.util.Optional.empty;
+
 public class AidmanDaoImpl implements AidmanDao{
 
     private static AidmanDao instance;
@@ -19,32 +25,32 @@ public class AidmanDaoImpl implements AidmanDao{
     }
 
     @Override
-    public Aidman getByIncrease(Integer increase) {
-        return null;
+    public Optional<Aidman> getByIncrease(Integer increase) {
+        return empty();
     }
 
     @Override
-    public Aidman save(Object object) {
-        return null;
+    public Optional<Aidman> save(Aidman object) {
+        return empty();
     }
 
     @Override
-    public Aidman update(Object object) {
-        return null;
+    public Optional<Aidman> update(Aidman object) {
+        return empty();
     }
 
     @Override
-    public Aidman[] getAll() {
-        return new Aidman[0];
+    public Set<Aidman> getAll() {
+        return new HashSet<>();
     }
 
     @Override
-    public Aidman getByName(String name) {
-        return null;
+    public Optional<Aidman> getByName(String name) {
+        return empty();
     }
 
     @Override
-    public void delete(Object object) {
+    public void delete(Aidman object) {
 
     }
 
